@@ -1,7 +1,7 @@
 	class Plan
-		PLANS = [:free, :premium]
+	PLANS = [:free, :premium]
 		
 	def self.options
-		PLANS.map{ |plan| [plan.captialize,plan] }
+		PLANS.map { |plan| [plan.capitalize, plan] }
 	end
 end

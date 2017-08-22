@@ -25,11 +25,12 @@
         </div>
         <div class="form-group col-md-6 no-right-padding">
           <%= w.label :plan %>
-          <%= w.select :plan, options_for_select(Plan.options, params[:plan]),{}, required: true, class: "form-control" %>
+          <%= w.select :plan, options_for_select(Plan.options, params[:plan]), required: true, class: "form-control" %>
         </div>
       <% end %>
       <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
+
 <%= render 'devise/shared/links' %>
