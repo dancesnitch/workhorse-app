@@ -3,7 +3,6 @@ class Project < ApplicationRecord
 	validates_uniqueness_of :title
 	validate :free_plan_can_only_have_one_project
 	belongs_to :tenant
-end
 
 
 def free_plan_can_only_have_one_project
@@ -18,5 +17,6 @@ def self.by_plan_and_tenant(tenant_id)
 			tenant.projects
 		else
 			tenant.projects.order(:id).limit(1)
+		end
 	end
 end
