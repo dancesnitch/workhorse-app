@@ -17,78 +17,11 @@
 
 <%= link_to '< Back to Organization Home', root_path, :class => 'btn btn-default' %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-            edit_tenant_project_path(project: @project, tenant: @project.tenant_id), :class => 'btn btn-default' %>
+            edit_tenant_project_path(project: @project, tenant: @project.tenant_id), 
+            :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
             tenant_project_path(@project, @project.tenant_id),
             :method => 'delete',
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm",
             :default => 'Are you sure?')) },
             :class => 'btn btn-danger' %>
-
-
-<div class="row">
-            <div class="col-md-10">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Team Moe Dashboard</div>
-
-                    <div class="panel-body">
-                        <div class="col-md-9">
-                            <h3>Projects</h3>    
-                            All projects for the Team Moe team
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12">
-                                                                        <div class="project-tile">
-  <a href="https://buildpivot.com/projects/83">
-
-
-      <div class="project-tile-image">
-        <i class="fa fa-thumb-tack"></i> 
-      </div>
-      <div class="project-tile-footer">
-          <span class="blue-text">Test 2</span>
-      </div>
-  </a>
-</div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-12 create-project">
-                                    <a href="https://buildpivot.com/projects/create"> 
-                                        <button type="button" class="btn btn-primary" id="create-project">
-                                            Create Project »
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            
-                            <h3>Team</h3>
-                            All users from all projects
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <ul class="home-users-list" id="home-users-list">
-                                        <li>Douglas Moe</li>                                    
-                            </ul></div>
-                            <div class="row">
-                                <div class="col-md-12 invite-new-member">
-                                    <a href="https://buildpivot.com/settings/teams/70#/membership"> 
-                                        <button type="button" class="btn btn-primary" id="invite-new-member">
-                                        Invite New Member  »              
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-            
