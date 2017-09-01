@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    
     respond_to do |format|
       if @project.save
         format.html { redirect_to root_url, notice: 'Project was successfully created.' }
@@ -75,11 +76,15 @@ end
   def set_tenant
     @tenant = Tenant.find(params[:tenant_id])
   end
-  def verify_tenant
-    unless params[:tenant_id] == Tenant.current_tenant_id.to_s 
-    redirect_to :root, flash: { error: 'You are not authorized to access any organization other than your own'}
-  end
-end
+
+    def verify_tenant
+      unless params[:tenant_id] == Tenant.current_tenant_id.to_s 
+        redirect_to :root, 
+              flash: { error: 'You are not authorized to access any organization other than your own'}
+      end
+    end
+
+
 
 
 

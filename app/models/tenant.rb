@@ -1,9 +1,16 @@
 class Tenant < ApplicationRecord
   acts_as_universal_and_determines_tenant
   has_many :members, dependent: :destroy
+  has_many :projects, dependent: :destroy
+
+##If plan memeber selects Free plan can only create 1 project
+##If plan member selects Premium plan can create as many projects as they want
+  def can_create_projects?
+    (plan == 'free' && projects.count < 1) || (plan == 'premium')
+  end
+
   validates_uniqueness_of :name
   validates_presence_of :name
-  has_many :projects, dependent: :destroy
   
     def self.create_new_tenant(tenant_params, user_params, coupon_params)
 
