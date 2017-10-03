@@ -8,5 +8,7 @@ class AddSessionsTable < ActiveRecord::Migration[5.1]
 
     add_index :sessions, :session_id, :unique => true
     add_index :sessions, :updated_at
+    #Added t.reference for tenant
+    t.references :tenant, foreign_key: true
   end
 end
