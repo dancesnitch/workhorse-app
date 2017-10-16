@@ -1,6 +1,5 @@
 class MembersController < ApplicationController
-
-  # uncomment to ensure common layout for forms
+# uncomment to ensure common layout for forms
   # layout  "sign", :only => [:new, :edit, :create]
 
   def new()
