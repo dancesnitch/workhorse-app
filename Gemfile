@@ -31,7 +31,7 @@ gem 'milia'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'bootstrap-datepicker-rails'
-
+gem 'aws-sdk'
 gem 'stripe'
 
 # Use CoffeeScript for .coffee assets and views
@@ -68,3 +68,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
+gem 'recaptcha', require: 'recaptcha/rails'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
+
+
+
+
