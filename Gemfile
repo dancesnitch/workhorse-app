@@ -32,8 +32,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'bootstrap-datepicker-rails'
 
-##Email Confirmation Development
-gem "letter_opener", :group => :development
+gem 'stripe'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

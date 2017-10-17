@@ -1,17 +1,17 @@
-class Tenant < ApplicationRecord
+class Tenant < ActiveRecord::Base
+  
   acts_as_universal_and_determines_tenant
   has_many :members, dependent: :destroy
   has_many :projects, dependent: :destroy
-
-##If plan memeber selects Free plan can only create 1 project
-##If plan member selects Premium plan can create as many projects as they want
+  has_one :payment
+  accepts_nested_attributes_for :payment
+  
   def can_create_projects?
-    (plan == 'free' && projects.count < 1) || (plan == 'premium')
+    (plan == 'free' && projects.count < 1) || (plan == 'premium')  
   end
-
+  
   validates_uniqueness_of :name
   validates_presence_of :name
-  
     def self.create_new_tenant(tenant_params, user_params, coupon_params)
 
       tenant = Tenant.new(tenant_params)
@@ -50,5 +50,7 @@ class Tenant < ApplicationRecord
       #
       Member.create_org_admin(user)
       #
-    end 
+    end
+
+   
 end
