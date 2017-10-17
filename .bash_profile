@@ -1,3 +1,6 @@
+require 'aws-sdk'
+
+
 export AWS_ACCESS_KEY_ID=AKIAIB5TQBGYF4ZE2KEQ
 export AWS_SECRET_ACCESS_KEY=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
 export AWS_REGION=us-east-2
